@@ -1,0 +1,6 @@
+<FilesMatch "\.html?$">
+AddType "text/html; charset=GB2312" .html .htm
+</FilesMatch>
+
+AddType text/html .html
+AddHandler server-parsed .html
