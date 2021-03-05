@@ -53,9 +53,17 @@ for (var i=0;i<loc_cnts.length;i++) {
     txcol = ' style="color: '+txcol+'">';
     tmp_url = '';
     if (locurl[loc_cnts[i][0]].length>6){
-       if (locurl[loc_cnts[i][0]].length>7) {tmp_url = locurl[loc_cnts[i][0]][7];}
+       if (locurl[loc_cnts[i][0]].length>7) {
+          tmp_url = locurl[loc_cnts[i][0]][7];
+       }else if (locurl[loc_cnts[i][0]][6].match(/[\u3400-\u9FBF]/)){
+          tmp_url = locurl[loc_cnts[i][0]][6];
+       }
     }else if (locurl[loc_cnts[i][0]].length>4){
-       if (locurl[loc_cnts[i][0]].length>5){ tmp_url = locurl[loc_cnts[i][0]][5];}
+       if (locurl[loc_cnts[i][0]].length>5){ 
+          tmp_url = locurl[loc_cnts[i][0]][5];
+       }else if (locurl[loc_cnts[i][0]][4].match(/[\u3400-\u9FBF]/)){
+          tmp_url = locurl[loc_cnts[i][0]][4];
+       }
     }
     if (tmp_url.length>0){
        tmp_url = '<a href="'+tmp_url+'" target="_blank"'+txcol+loc_cnts[i][0]+'</a>';
