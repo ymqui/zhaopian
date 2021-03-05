@@ -53,9 +53,9 @@ for (var i=0;i<loc_cnts.length;i++) {
     txcol = ' style="color: '+txcol+'">';
     tmp_url = '';
     if (locurl[loc_cnts[i][0]].length>6){
-       var tmp_url = locurl[loc_cnts[i][0]][Math.min(6+usechinese,locurl[loc_cnts[i][0]].length-1)];
+       if (locurl[loc_cnts[i][0]].length>7) {tmp_url = locurl[loc_cnts[i][0]][7];}
     }else if (locurl[loc_cnts[i][0]].length>4){
-       var tmp_url = locurl[loc_cnts[i][0]][Math.min(4+usechinese,locurl[loc_cnts[i][0]].length-1)];
+       if (locurl[loc_cnts[i][0]].length>5){ tmp_url = locurl[loc_cnts[i][0]][5];}
     }
     if (tmp_url.length>0){
        tmp_url = '<a href="'+tmp_url+'" target="_blank"'+txcol+loc_cnts[i][0]+'</a>';
